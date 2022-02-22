@@ -1,12 +1,10 @@
-  @replaceMethod(LocomotionAirDecisions)
+  @wrapMethod(LocomotionAirDecisions)
   protected final const func GetLandingType(const stateContext: ref<StateContext>) -> Int32 {
-    // return stateContext.GetIntParameter(n"LandingType", true);
+    let wrap: Int32 = wrappedMethod(stateContext);
 
-    // BEGIN PATCH
-    if stateContext.GetIntParameter(n"LandingType", true) == 3 {
+    if wrap == 3 {
       return 2;
     } else {
-      return stateContext.GetIntParameter(n"LandingType", true);
+      return wrap;
     };
-    // END PATCH
   }

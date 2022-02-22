@@ -4,7 +4,7 @@
     if !jumpPressedFlag && !this.m_jumpPressed {
       this.EnableOnEnterCondition(false);
     };
-    // if scriptInterface.localBlackboard.GetBool(GetAllBlackboardDefs().PlayerStateMachine.IsPlayerInsideMovingElevator) {
+    // if scriptInterface.localBlackboard.GetBool(GetAllBlackboardDefs().PlayerStateMachine.IsPlayerInsideElevator) {
     //   return false;
     // };
     if !scriptInterface.HasStatFlag(gamedataStatType.CanJump) {
@@ -66,7 +66,7 @@
     if !hasDoubleJump {
     // END PATCH
 
-    //if !scriptInterface.HasStatFlag(gamedataStatType.HasDoubleJump) {
+    // if !scriptInterface.HasStatFlag(gamedataStatType.HasDoubleJump) {
       return false;
     };
     if scriptInterface.HasStatFlag(gamedataStatType.HasChargeJump) || scriptInterface.HasStatFlag(gamedataStatType.HasAirHover) {

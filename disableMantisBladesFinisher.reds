@@ -35,5 +35,7 @@
     // END PATCH
 
     AnimationControllerComponent.PushEventToObjAndHeldItems(instigator, n"ForceReady");
+    this.SetCameraContext(instigator, n"WorkspotLocked");
+    this.SetGameplayCameraParameters(instigator, "cameraFinishers");
     return true;
   }
