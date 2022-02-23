@@ -1,10 +1,7 @@
-  @wrapMethod(LocomotionAirDecisions)
-  protected final const func GetLandingType(const stateContext: ref<StateContext>) -> Int32 {
-    let wrap: Int32 = wrappedMethod(stateContext);
-
-    if wrap == 3 {
-      return 2;
-    } else {
-      return wrap;
-    };
+@wrapMethod(LocomotionAirEvents)
+  public func OnEnter(stateContext: ref<StateContext>, scriptInterface: ref<StateGameScriptInterface>) -> Void {
+    wrappedMethod(stateContext, scriptInterface);
+    let deathLandingFallingSpeed: Float;
+    deathLandingFallingSpeed = this.GetFallingSpeedBasedOnHeight(scriptInterface, this.GetStaticFloatParameterDefault("deathLanding", 1.00));
+    stateContext.SetPermanentFloatParameter(n"VeryHardLandingFallingSpeed", deathLandingFallingSpeed, true);
   }
